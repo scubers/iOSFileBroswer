@@ -14,6 +14,9 @@
 		0961C0ED1DDAC55B0093822D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0961C0EC1DDAC55B0093822D /* Assets.xcassets */; };
 		0961C0F01DDAC55B0093822D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0961C0EE1DDAC55B0093822D /* LaunchScreen.storyboard */; };
 		0961C0FB1DDAC55B0093822D /* iOSFileBroswerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961C0FA1DDAC55B0093822D /* iOSFileBroswerTests.m */; };
+		0961C1081DDAC5A40093822D /* JRFBNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961C1071DDAC5A40093822D /* JRFBNavigationViewController.m */; };
+		0961C10B1DDAC5DF0093822D /* JRFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961C10A1DDAC5DF0093822D /* JRFBViewController.m */; };
+		0961C10E1DDACFBD0093822D /* JRFBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 0961C10D1DDACFBD0093822D /* JRFBFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		0961C0F61DDAC55B0093822D /* iOSFileBroswerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSFileBroswerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0961C0FA1DDAC55B0093822D /* iOSFileBroswerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSFileBroswerTests.m; sourceTree = "<group>"; };
 		0961C0FC1DDAC55B0093822D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0961C1061DDAC5A40093822D /* JRFBNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRFBNavigationViewController.h; sourceTree = "<group>"; };
+		0961C1071DDAC5A40093822D /* JRFBNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFBNavigationViewController.m; sourceTree = "<group>"; };
+		0961C1091DDAC5DF0093822D /* JRFBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRFBViewController.h; sourceTree = "<group>"; };
+		0961C10A1DDAC5DF0093822D /* JRFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFBViewController.m; sourceTree = "<group>"; };
+		0961C10C1DDACFBD0093822D /* JRFBFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRFBFile.h; sourceTree = "<group>"; };
+		0961C10D1DDACFBD0093822D /* JRFBFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFBFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 		0961C0DF1DDAC55B0093822D /* iOSFileBroswer */ = {
 			isa = PBXGroup;
 			children = (
+				0961C1051DDAC56A0093822D /* classes */,
 				0961C0E31DDAC55B0093822D /* AppDelegate.h */,
 				0961C0E41DDAC55B0093822D /* AppDelegate.m */,
 				0961C0E61DDAC55B0093822D /* ViewController.h */,
@@ -109,6 +119,19 @@
 				0961C0FC1DDAC55B0093822D /* Info.plist */,
 			);
 			path = iOSFileBroswerTests;
+			sourceTree = "<group>";
+		};
+		0961C1051DDAC56A0093822D /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				0961C1061DDAC5A40093822D /* JRFBNavigationViewController.h */,
+				0961C1071DDAC5A40093822D /* JRFBNavigationViewController.m */,
+				0961C1091DDAC5DF0093822D /* JRFBViewController.h */,
+				0961C10A1DDAC5DF0093822D /* JRFBViewController.m */,
+				0961C10C1DDACFBD0093822D /* JRFBFile.h */,
+				0961C10D1DDACFBD0093822D /* JRFBFile.m */,
+			);
+			path = classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0961C1081DDAC5A40093822D /* JRFBNavigationViewController.m in Sources */,
+				0961C10E1DDACFBD0093822D /* JRFBFile.m in Sources */,
+				0961C10B1DDAC5DF0093822D /* JRFBViewController.m in Sources */,
 				0961C0E81DDAC55B0093822D /* ViewController.m in Sources */,
 				0961C0E51DDAC55B0093822D /* AppDelegate.m in Sources */,
 				0961C0E21DDAC55B0093822D /* main.m in Sources */,
