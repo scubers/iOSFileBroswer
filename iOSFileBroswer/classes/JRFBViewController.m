@@ -7,6 +7,7 @@
 
 #import "JRFBViewController.h"
 #import "JRFBFile.h"
+#import "JRFBTextViewController.h"
 
 @interface JRFBViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -74,6 +75,31 @@
     if (file.isDirectory) {
         JRFBViewController *vc = [[JRFBViewController alloc] initWithPath:file.path];
         [self.navigationController pushViewController:vc animated:YES];
+    } else {
+        // air drop 分享
+
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择方式" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+        [alert addAction:[UIAlertAction actionWithTitle:@"AirDrop" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:@[[NSURL fileURLWithPath:file.path]] applicationActivities:nil];
+            [self presentViewController:vc animated:YES completion:nil];
+        }]];
+
+        [alert addAction:[UIAlertAction actionWithTitle:@"使用文本打开" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSError *error;
+            NSString *text = [NSString stringWithContentsOfFile:file.path encoding:NSUTF8StringEncoding error:&error];
+            if (error) {
+                [self alertMsg:[error description]];
+            } else {
+                JRFBTextViewController *vc = [[JRFBTextViewController alloc] initWithText:text];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }]];
+
+        [self presentViewController:alert animated:YES completion:nil];
+
     }
 }
 
@@ -104,6 +130,14 @@
         _files = [[NSMutableArray<JRFBFile *> alloc] init];
     }
     return _files;
+}
+
+- (void)alertMsg:(NSString *)msg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:msg message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

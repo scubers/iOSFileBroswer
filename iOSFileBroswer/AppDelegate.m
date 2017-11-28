@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSString *abc = @"lksjdflkjdlkfj";
+    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+
+    [abc writeToFile:[docPath stringByAppendingPathComponent:@"ttt.txt"] atomically:YES encoding:NSUTF8StringEncoding error:nil];
     return YES;
 }
 
